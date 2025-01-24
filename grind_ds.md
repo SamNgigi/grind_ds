@@ -42,20 +42,22 @@
 #### SQL
 1. Explain the difference between `INNER JOIN` , `LEFT JOIN`, `RIGHT JOIN` and `FULL JOIN`. #easyDS100  
 > [!Success]
-> **INNER JOIN**: Returns matching rows in both tables 
-> **LEFT JOIN**:  Return all rows from the left table + matched from right.
-> **RIGHT JOIN**: Returns all rows from the right table + matched from left
-> **FULL JOIN**: Returns rows from both tables(matched + unmatched)
+>
+> - **INNER JOIN**: Returns matching rows in both tables 
+> - **LEFT JOIN**:  Return all rows from the left table + matched from right.
+> - **RIGHT JOIN**: Returns all rows from the right table + matched from left
+> - **FULL JOIN**: Returns rows from both tables(matched + unmatched)
 
 #### Probability & Statistics
 1. What's the difference between Type I and Type II errors? #easyDS100 
 > [!Succes]
-> **Type I (False Positive)**: Rejecting the null hypothesis when it's actually true
+>
+> - **Type I (False Positive)**: Rejecting the null hypothesis when it's actually true
 >> If we use pregnancy tests as an example we can say Type I error would be a result indicating the test is pregnant when they actually aren't.
 >>
 >> Another example may be pursing a business idea based on incomplete validation assuming it will succeed when it is likely it will fail on further analysis
 >
-> **Type II (False Negative)**: Failing to Reject the null hypothesis when it's actually false 
+> - **Type II (False Negative)**: Failing to Reject the null hypothesis when it's actually false 
 >> A Type II error would be a result indicating that a tester isn't pregnant when they actually are
 >>
 >> In context of a business it may mean giving up on a business idea to early yet is would have likely succeeded given time
@@ -63,12 +65,14 @@
 
 2. Explain p-values in layman's terms #easyDS100 
 > [!Success]
+>
 > The p-value is the probability of observing a result at least as extreme as the one observed/gotten, assuming the null hypothesis is true.
 > 
 > A low p-value suggests your observed data is unlikely under the null hypothesis, leading you to seriously consider rejecting it
 
 3. What is the Central Limit Theorem and why it is important? #easyDS100 
 >[!Success]
+>
 > The **Central Limit Theorem** states that the distribution of sample means approach a normal distribution as the sample size grows, regardless of the population's distribution
 >
 > This is important because it justifies using normal approximation for inference. This is to mean that even if the world is messy, _averages of large samples behave predictably_
@@ -76,6 +80,8 @@
 >
 
 4. How do you interpret confidence intervals? #easyDS100 
+> [!Success]
+>
 > A confidence inteval is interpreted as a range of values within which we are a certain level of "confident" that the true population parameter (like the mean) lies, based on the data from the sample
 > essentially, if we were to repeate the sampling process many times the calculated confidence intervals would capture the true population parameter a specified % of the time
 > 
