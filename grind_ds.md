@@ -12,6 +12,7 @@
 > ```
 > df.groubBy('month')[sales].sum()
 > ```
+
 2. What is the difference between `iloc` and `loc` in Pandas? #easyDS100  
 >[!Success]
 > - `iloc` uses **integer** position/location based indexing (like arrays).
@@ -48,8 +49,32 @@
 
 #### Probability & Statistics
 1. What's the difference between Type I and Type II errors? #easyDS100 
+> [!Succes]
+> **Type I (False Positive)**: Rejecting the null hypothesis when it's actually true
+>> If we use pregnancy tests as an example we can say Type I error would be a result indicating the test is pregnant when they actually aren't.
+>>
+>> Another example may be pursing a business idea based on incomplete validation assuming it will succeed when it is likely it will fail on further analysis
+>
+> **Type II (False Negative)**: Failing to Reject the null hypothesis when it's actually false 
+>> A Type II error would be a result indicating that a tester isn't pregnant when they actually are
+>>
+>> In context of a business it may mean giving up on a business idea to early yet is would have likely succeeded given time
+>
+
 2. Explain p-values in layman's terms #easyDS100 
+> [!Success]
+> The p-value is the probability of observing a result at least as extreme as the one observed/gotten, assuming the null hypothesis is true.
+> 
+> A low p-value suggests your observed data is unlikely under the null hypothesis, leading you to seriously consider rejecting it
+
 3. What is the Central Limit Theorem and why it is important? #easyDS100 
+>[!Success]
+> The **Central Limit Theorem** states that the distribution of sample means approach a normal distribution as the sample size grows, regardless of the population's distribution
+>
+> This is important because it justifies using normal approximation for inference. This is to mean that even if the world is messy, _averages of large samples behave predictably_
+> like a bell curve. This is why polls, medical studies, and quality control in factories rely on normal distribution tool.
+>
+
 4. How do you interpret confidence intervals? #easyDS100 
 
 #### Advance Statistics & Experimentation
