@@ -76,6 +76,13 @@
 >
 
 4. How do you interpret confidence intervals? #easyDS100 
+> A confidence inteval is interpreted as a range of values within which we are a certain level of "confident" that the true population parameter (like the mean) lies, based on the data from the sample
+> essentially, if we were to repeate the sampling process many times the calculated confidence intervals would capture the true population parameter a specified % of the time
+> 
+>
+> It means 95% confidence interval means that if we repeat the experiment many times, ~95% of the computed intervals would contain the true parameter
+>
+> We are 95% confident that 95% of the time the true population parameter value would lie within a specific interval
 
 #### Advance Statistics & Experimentation
 1. Explain A/B testing and how you determine sample size. #mediumDS100 
