@@ -82,7 +82,7 @@
 4. How do you interpret confidence intervals? #easyDS100 
 > [!Success]
 >
-> A confidence inteval is interpreted as a range of values within which we are a certain level of "confident" that the true population parameter (like the mean) lies, based on the data from the sample
+> A confidence inteval is interpreted as a range of values within which we are a certain level of "confident" that the true population parameter (like the mean) lies, based on the data from the sample;
 > essentially, if we were to repeate the sampling process many times the calculated confidence intervals would capture the true population parameter a specified % of the time
 > 
 >
@@ -92,13 +92,58 @@
 
 #### Advance Statistics & Experimentation
 1. Explain A/B testing and how you determine sample size. #mediumDS100 
+> A/B testing is about comparing 2 versions of the same experiment (A, B) on a key metric (e.g conversion)
+> 
+> The sample size is determined by **desired power**, **significance level** and **minimum detectable effect**.
+>> - **power** - ability to find real effects
+>> - **significance level** - false positive risk
+>> - **minimum desired effect (MDE)** - smalles effect worth detecting
+>
+> A common approach is to use a standard formula or tool such as power analysis to determine an appropriate sample size
+>
+
+
 2. How do you define a null hypothesis and alternative hypothesis in an experiment? #easyDS100 
+> Null Hypothesis **H0** Assumes no dfference in status quo
+>
+> Alternative Hypothesis **H1** Assumes there is a desired difference or effect
+
 3. How do you measure the success of an A/B test, and what metrics are most important? #mediumDS100 
+> Measure/KPI that is aligned with the business outcome typically conversion rate, click-through rate, revenue per user
+>
+> Important to look at statistical significance and practical significance
+
+
 #### Machine Learning Fundamentals
 1. Explain the bias-variance trade-off #easyDS100 
+> - **Bias** - Difference between the predicted values and correct values. High Bias gives a large error in both
+> training and test data. High bias leads to **Underfitting** i.e. the inability of a model to capture the underlying complexity/pattern of the data. It is recommended an algorithm have low bias.
+> - **Variance** - In machine learning is the amount by which the performance of a predictive model changes when it is trained on different subsets of the training data, indicating how sensitive it is to another subset of the training set.
+>
+> Low variance means a model is less sensitive to changes in the training data and can produce consistent estimates. This may indicate undefitting
+>
+> High variance means that the model is very sensitive to changes in the training data meaning that may have also capture the noise in the traning data making perform poorly in new unseen test data.
+>
+>Ideally we want a model that has low bias and low variance which is not possible because optimizing for one causes the opposite change in the other.
+>
+
 2. What is cross-validation and why is it useful? #easyDS100 
+> e.g **k-fold** splits data into multiple folds. In each iteration we use one fold for validation the other for training.
+>
+> Helps reduce overfitting and improve generalization estimates
+>
+
 3. Define overfitting and underfitting with examples #easyDS100 
+> - **Overfitting:** Model captures noise and performs poorly on new data (e.g. a polynomial of very high degree that fits
+> training data points exactly)
+> - **Underfittig:** The model is too simple to capture the trend (e.g. using a linear model for a highly non-linear data)
+
 4. How do you evaluate a classification model (precision, recall, F1, ROC, AUC)? #mediumDS100 
+> - **Precision:** Of all predicted positives how many are truly positive i.e. TP/(TP + FP)
+> - **Recall:** Of all actual positives how many did we predict correctly i.e. TP/(TP + FN)
+
+
+
 5. Explain how Logistic Regression works and how to interpret its coefficients. #mediumDS100 
 6. How do you handle imbalanced datasets? #mediumDS100 
 
