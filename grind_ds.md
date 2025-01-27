@@ -139,30 +139,88 @@
 > - **Underfittig:** The model is too simple to capture the trend (e.g. using a linear model for a highly non-linear data)
 
 4. How do you evaluate a classification model (precision, recall, F1, ROC, AUC)? #mediumDS100 
-> - **Precision:** Of all predicted positives how many are truly positive i.e. TP/(TP + FP)
-> - **Recall:** Of all actual positives how many did we predict correctly i.e. TP/(TP + FN)
-
-
+> - **Confusion Matrix:** Table of TP, FP, TN, FN to derive metrics like precision, recall and F1 for a granular view of the model.
+> - **Precision:** Of all predicted positives how many are truly positive i.e. TP/(TP + FP). When minimizing False Positive is critical (spam detection, legal risk prediction)
+> - **Recall:** Of all actual positives how many did we predict correctly i.e. TP/(TP + FN). When minimizing False Negatives is vital (medical diagnoses, fraud detection)
+> - **F1 Score:** Harmonic mean of precision and recall. Used for balancing precision and recal in imbalanced datasets. Avoid if one metric is more critical
+> - **ROC-AUC:** Area under the Receiver Operating Characterstic Curve (TPR vs FPR). Used for comparing overall model performance especially with balanced classes. Less reliable
+> for severe imbalance
+> - **PR-AUC:** Area under the Precision-Recall Curve. Usesd in imbalanced datasets or when focus is on positive class (e.ge rare disease screening)
 
 5. Explain how Logistic Regression works and how to interpret its coefficients. #mediumDS100 
+> Logistic regression works by using the logit function(sigmoid function) to model probability of a binary outcome.
+> 
+> The sign of the coefficient indicates direction of influence on the log-odds; exponentiated coefficients indicates the odds ratio for 1-unit increase in that feature.
+>
+>> - **Positive Coefficients:** Increase the log-odds (and hence the probability) of a positive class
+>> - **Negative Coefficients:** Decrease the log-odds (and hence the probability) of a positive class
+>> - **Magnitude:** Larger coefficients indicate stronger effects of the corresponding feature
+
 6. How do you handle imbalanced datasets? #mediumDS100 
+> - **Over Sampling (Synthetic Minority Over-Sampling Technique)** - 
+> - **Undersampling Majority Class**
+> - **Class Weighting** - Assign a weight to each class _e.g Majority class = 1, Minority class = #Majority class sample/#Minority class sample_
+> - Using the approprate metric such as the _F1 Score_ and _PR-AUC_ which focus on minority class performance 
+
+
 
 #### Ensemble & Advanced ML
-1. Describe how a Random Forest works #mediumDS100 
+1. Describe how a Random Forest works* #mediumDS100 
+> A random Forest trains and aggregates multiple decision trees on different bootstrapped samples of the data (and with random subsets of features).
+>
+> Predictions are then averaged (for regression) or majority voted (for classification)
+
 2. What is Gradient Boosting, and how is it different from Bagging? #mediumDS100 
+> - **Bagging:** Trains models in parallel on bootstrapped samples: aggregates predictions
+> - **Gradient Boosting:** Trains model in an additive, sequential manner, each new model correcting the errors of the previous enseble
+
 3. What are hyperparameters, and how do you typically tune them? #mediumDS100 
+> Hyperparameters are setting external to the model parameters (e.g. learning rate, max-depth)
+>
+> Tuning can be done via **GridSearchCV**, **RandomizedSearchCV**, **Bayesian Optimization**
 
 #### Deep Learning
 1. Explain the concept of backpropagation? #mediumDS100 
+> **Backpropagation** is the process of computing gradients of the loss function with respect to (w.r.t) the networks's weights by applying the
+> chain rule in a reverse pass, allowing weight updates that minimize the loss.
+
 2. How do you approach transfer learning in deep learning? #mediumDS100 
+> Typically **fine tune** a model (e.g. a pretrained CNN on ImageNet) on a custom specific dataset. Freeze early layers (to retain generic features)
+> and retrain later layers on new data.
+
+3. What is the Transformer Architecture, and why did it become popular for NLP tasks? #hardDS100
+> **Self-Attention Mechanism** that allows the a model to capture global dependencies without recurrence or convolution
+> 
+> Scales well to large datasets due to ability to parallize and has achieved state of the art results in many NLP tasks
 
 #### Business & Product Sense
 1. Explain a project where you had to balance technical accuracy with business requirements. #easyDS100 
+> Building model that could accurately predict students who were at risk of dropping out academically or giving low nps
+> vs Identifying what was the primary cause of students dropping out. It wasn't academic nor because of student experience
+>
+> Reason was due to cost of the course and time demand. Main metric being optimized was for maximum revenue capture. Alternate automations helped track this.
+> Dashboard of academic vs non-academic drop offs
+
 2. How do you choose the right evaluation metric for a business problem? #mediumDS100 
+> For profit making organizations its main metrics are around driving/increasing profits/revenue, reducing expenses
+>
+> For NGOs it maybe quantity of impact i.e. how many people have we served, or quality of impact. How different is it for people (Increase in standard of living)  
+
+
 3. Walk me through how you'd design a recommendation system for an e-commerce site #mediumDS100 
+> - Outline data source ( user behaviour, item metadata)
+> - Consider collaborative filtering + content-based filtering
+> - Decide on offline vs real-time serving. Evaluate via user engagement metrics or CTR (click through rate)
 
 #### Behavioral & Team Fit
 1. Tell me about a challenging data science problem you faced and how you solved it. #easyDS100 
+> Influencing a study on Graduate Salary progression that involved multiple teams internally and externally
+>
+> - Current data has a lot of missing data. Whichever way the study was to be done needed to appropriately backdate existing data
+> - Define appropriate null and alternative hypothesis
+> - Validate findings
+> - Communication of findings
+> - Effective stakeholder management
 
 ## Practical
 
