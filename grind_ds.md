@@ -41,7 +41,7 @@
 
 #### SQL
 1. Explain the difference between `INNER JOIN` , `LEFT JOIN`, `RIGHT JOIN` and `FULL JOIN`. #easyDS100  
-> [!Success]
+> [!Info]
 >
 > - **INNER JOIN**: Returns matching rows in both tables 
 > - **LEFT JOIN**:  Return all rows from the left table + matched from right.
