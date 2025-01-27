@@ -193,8 +193,32 @@
 > 
 > Scales well to large datasets due to ability to parallize and has achieved state of the art results in many NLP tasks
 
+#### Retrieval-Augemented Generation (RAG)
+1. What is Retrieval-Augmented Generation, and why might it be preferable to the standard LLM approach? #easyDS100
+> RAG involves retrieving knowledge that is external to a model i.e not part of the model corpus (e.g. custom document, context) and feeding it
+into an LLM to generate answers that are grounded in up-to-date or domain/context-specific information/data
+>
+> It reduces hallucinations, ensures answers are based on actual up-to-date data rather than purely on model "memory" and allows us to update its knowledge
+> without fully retraining a large model
+
+2. How do you typically store and retrieve documents in a RAG pipeline? #mediumDS100
+> - **Storage:** Documents can be stored in a vector db such as Chroma, Milvus, Faiss, Pinecone Qdrant or an indexed system
+> - **Retrieval:** Steps involve _creating embeddings_ (transforming text into vectors) and then querying the vector store with a user query (also transformed
+> into a vector). The database returns the _top-k_ semantically relevant chunks, which are then provided as context to the LLM
+
+3. How do you mitigate hallucinations in a Retrieval-Augmented Generation system? #mediumDS100
+> - Using a reliable retrieval layer with high-quality embeddings and properly chunked documents.
+> - Employ **prompt templates** that explicitly instruct the model to use only provided context.
+> - Implement **verification step** such as cross checking the LLM's asnwer against the source document, or using chain of thought approach that references retrieved
+> text
+
 #### Business & Product Sense
 1. Explain a project where you had to balance technical accuracy with business requirements. #easyDS100 
+> Understanding the business impact of difference accuracy levels. In some cases, a simpler model with faster inference might be better
+> if it meets the business's performance threshold
+>
+>> Alteranive
+>
 > Building model that could accurately predict students who were at risk of dropping out academically or giving low nps
 > vs Identifying what was the primary cause of students dropping out. It wasn't academic nor because of student experience
 >
@@ -202,6 +226,18 @@
 > Dashboard of academic vs non-academic drop offs
 
 2. How do you choose the right evaluation metric for a business problem? #mediumDS100 
+> Focus on use-case and business value. If false positives are costly, optimize precision, if false negatives are risky, optimize recall for example.
+> 
+> For ranking problems me can use _NDCG_ or _MAP_.
+>> - **Normalized Discounted Cumulative Gain (NDCG):** - A ranking quality metric used in information retreival to measure effectiveness of search engines, recommomendation
+>> systems and other ranking algorithms. It evaluates ranking quality by taking into account both a relevant item's position and its importance/position
+>>
+>> - **Mean Average Position (MAP):** It considers the number of relevant recommendations and their position in the list
+>
+> Alway tying back to ROI or user satisfaction.
+
+>> Alternative
+>
 > For profit making organizations its main metrics are around driving/increasing profits/revenue, reducing expenses
 >
 > For NGOs it maybe quantity of impact i.e. how many people have we served, or quality of impact. How different is it for people (Increase in standard of living)  
