@@ -213,6 +213,31 @@ into an LLM to generate answers that are grounded in up-to-date or domain/contex
 > - Implement **verification step** such as cross checking the LLM's asnwer against the source document, or using chain of thought approach that references retrieved
 > text
 
+#### Large Language Models (LLMs)
+1. What is the Transformer architecture, and why is it central to modern LLMs? #easyDS100
+> Introduced Self-Attention to process entire sequence in parallel, rather than sequentially.
+>
+> It enabled efficient training on massive text corpora, capturing long-range dependencies, and is highly scalable leading to models like (BERT, GPT)
+
+2. How does attention work in Transformers?* #mediumDS100
+> Each token in a sequence computes weighted scores (attention weights) with every other token, determining how much focus to give each position
+>
+> Uses **Queries**, **Keys**, and **Values**: $Attention(\mathbf{Q,K,V}) = softmax(\frac{\mathbf{QK}^T}{\sqrt{d_k}})V$ 
+
+3. What are the common causes of hallucinations in LLMs, and how can they be mitigated (beyond RAG)? #mediumDS100
+> The model's training data might be incomplete, or it 'confabulates' to fill gaps. Also, LLM models are trained to predict plausible sequences rather than verify truth
+>
+>To mitigate this one can instruction tune to encourage accurate outputs, through robust prompt engineering that demands sources, external fact-checking, and fine-tuning
+on domain-specific or more factual data sets. Also reducing temperature setting so that it is more factual and succint as opposed to creative.
+
+#### LLM Fine-Tuning
+1. What data considerations are crucial when fine-tuning an LLM
+> [!Success]
+> 
+> - **Data cleanliness and relevance:** Mismatched domain data can degrade performance
+> - **Size and diversity:** Enough examples to generalize, but not so large that it drifts from original capabilities
+> - **Ethical/Legal:** Ensuring that you have the right to use the data and it follows privacy guidelines
+
 #### Business & Product Sense
 1. Explain a project where you had to balance technical accuracy with business requirements. #easyDS100 
 > Understanding the business impact of difference accuracy levels. In some cases, a simpler model with faster inference might be better
