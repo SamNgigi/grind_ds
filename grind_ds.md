@@ -93,6 +93,8 @@
 
 #### Advance Statistics & Experimentation
 1. Explain A/B testing and how you determine sample size. #mediumDS100 
+> [!Success]
+>
 > A/B testing is about comparing 2 versions of the same experiment (A, B) on a key metric (e.g conversion)
 > 
 > The sample size is determined by **desired power**, **significance level** and **minimum detectable effect**.
@@ -105,11 +107,15 @@
 
 
 2. How do you define a null hypothesis and alternative hypothesis in an experiment? #easyDS100 
+> [!Success]
+>
 > Null Hypothesis **H0** Assumes no dfference in status quo
 >
 > Alternative Hypothesis **H1** Assumes there is a desired difference or effect
 
 3. How do you measure the success of an A/B test, and what metrics are most important? #mediumDS100 
+> [!Success]
+>
 > Measure/KPI that is aligned with the business outcome typically conversion rate, click-through rate, revenue per user
 >
 > Important to look at statistical significance and practical significance
@@ -117,6 +123,8 @@
 
 #### Machine Learning Fundamentals
 1. Explain the bias-variance trade-off #easyDS100 
+> [!Success]
+>
 > - **Bias** - Difference between the predicted values and correct values. High Bias gives a large error in both
 > training and test data. High bias leads to **Underfitting** i.e. the inability of a model to capture the underlying complexity/pattern of the data. It is recommended an algorithm have low bias.
 > - **Variance** - In machine learning is the amount by which the performance of a predictive model changes when it is trained on different subsets of the training data, indicating how sensitive it is to another subset of the training set.
@@ -129,17 +137,23 @@
 >
 
 2. What is cross-validation and why is it useful? #easyDS100 
+> [!Success]
+>
 > e.g **k-fold** splits data into multiple folds. In each iteration we use one fold for validation the other for training.
 >
 > Helps reduce overfitting and improve generalization estimates
 >
 
 3. Define overfitting and underfitting with examples #easyDS100 
+> [!Success]
+>
 > - **Overfitting:** Model captures noise and performs poorly on new data (e.g. a polynomial of very high degree that fits
 > training data points exactly)
 > - **Underfittig:** The model is too simple to capture the trend (e.g. using a linear model for a highly non-linear data)
 
 4. How do you evaluate a classification model (precision, recall, F1, ROC, AUC)? #mediumDS100 
+> [!Success]
+>
 > - **Confusion Matrix:** Table of TP, FP, TN, FN to derive metrics like precision, recall and F1 for a granular view of the model.
 > - **Precision:** Of all predicted positives how many are truly positive i.e. TP/(TP + FP). When minimizing False Positive is critical (spam detection, legal risk prediction)
 > - **Recall:** Of all actual positives how many did we predict correctly i.e. TP/(TP + FN). When minimizing False Negatives is vital (medical diagnoses, fraud detection)
@@ -149,7 +163,9 @@
 > - **PR-AUC:** Area under the Precision-Recall Curve. Usesd in imbalanced datasets or when focus is on positive class (e.ge rare disease screening)
 
 5. Explain how Logistic Regression works and how to interpret its coefficients. #mediumDS100 
-> Logistic regression works by using the logit function(sigmoid function) to model probability of a binary outcome.
+> [!Success]
+>
+>  Logistic regression works by using the logit function(sigmoid function) to model probability of a binary outcome.
 > 
 > The sign of the coefficient indicates direction of influence on the log-odds; exponentiated coefficients indicates the odds ratio for 1-unit increase in that feature.
 >
@@ -158,6 +174,8 @@
 >> - **Magnitude:** Larger coefficients indicate stronger effects of the corresponding feature
 
 6. How do you handle imbalanced datasets? #mediumDS100 
+> [!Success]
+>
 > - **Over Sampling (Synthetic Minority Over-Sampling Technique)** - 
 > - **Undersampling Majority Class**
 > - **Class Weighting** - Assign a weight to each class _e.g Majority class = 1, Minority class = #Majority class sample/#Minority class sample_
@@ -167,35 +185,49 @@
 
 #### Ensemble & Advanced ML
 1. Describe how a Random Forest works* #mediumDS100 
+> [!Success]
+>
 > A random Forest trains and aggregates multiple decision trees on different bootstrapped samples of the data (and with random subsets of features).
 >
 > Predictions are then averaged (for regression) or majority voted (for classification)
 
 2. What is Gradient Boosting, and how is it different from Bagging? #mediumDS100 
+> [!Success]
+>
 > - **Bagging:** Trains models in parallel on bootstrapped samples: aggregates predictions
 > - **Gradient Boosting:** Trains model in an additive, sequential manner, each new model correcting the errors of the previous enseble
 
 3. What are hyperparameters, and how do you typically tune them? #mediumDS100 
+> [!Success]
+>
 > Hyperparameters are setting external to the model parameters (e.g. learning rate, max-depth)
 >
 > Tuning can be done via **GridSearchCV**, **RandomizedSearchCV**, **Bayesian Optimization**
 
 #### Deep Learning
 1. Explain the concept of backpropagation? #mediumDS100 
+> [!Success]
+>
 > **Backpropagation** is the process of computing gradients of the loss function with respect to (w.r.t) the networks's weights by applying the
 > chain rule in a reverse pass, allowing weight updates that minimize the loss.
 
 2. How do you approach transfer learning in deep learning? #mediumDS100 
+> [!Success]
+>
 > Typically **fine tune** a model (e.g. a pretrained CNN on ImageNet) on a custom specific dataset. Freeze early layers (to retain generic features)
 > and retrain later layers on new data.
 
 3. What is the Transformer Architecture, and why did it become popular for NLP tasks? #hardDS100
+> [!Success]
+>
 > **Self-Attention Mechanism** that allows the a model to capture global dependencies without recurrence or convolution
 > 
 > Scales well to large datasets due to ability to parallize and has achieved state of the art results in many NLP tasks
 
 #### Retrieval-Augemented Generation (RAG)
 1. What is Retrieval-Augmented Generation, and why might it be preferable to the standard LLM approach? #easyDS100
+> [!Success]
+>
 > RAG involves retrieving knowledge that is external to a model i.e not part of the model corpus (e.g. custom document, context) and feeding it
 into an LLM to generate answers that are grounded in up-to-date or domain/context-specific information/data
 >
@@ -203,11 +235,15 @@ into an LLM to generate answers that are grounded in up-to-date or domain/contex
 > without fully retraining a large model
 
 2. How do you typically store and retrieve documents in a RAG pipeline? #mediumDS100
+> [!Success]
+>
 > - **Storage:** Documents can be stored in a vector db such as Chroma, Milvus, Faiss, Pinecone Qdrant or an indexed system
 > - **Retrieval:** Steps involve _creating embeddings_ (transforming text into vectors) and then querying the vector store with a user query (also transformed
 > into a vector). The database returns the _top-k_ semantically relevant chunks, which are then provided as context to the LLM
 
 3. How do you mitigate hallucinations in a Retrieval-Augmented Generation system? #mediumDS100
+> [!Success]
+>
 > - Using a reliable retrieval layer with high-quality embeddings and properly chunked documents.
 > - Employ **prompt templates** that explicitly instruct the model to use only provided context.
 > - Implement **verification step** such as cross checking the LLM's asnwer against the source document, or using chain of thought approach that references retrieved
@@ -215,16 +251,22 @@ into an LLM to generate answers that are grounded in up-to-date or domain/contex
 
 #### Large Language Models (LLMs)
 1. What is the Transformer architecture, and why is it central to modern LLMs? #easyDS100
+> [!Success]
+>
 > Introduced Self-Attention to process entire sequence in parallel, rather than sequentially.
 >
 > It enabled efficient training on massive text corpora, capturing long-range dependencies, and is highly scalable leading to models like (BERT, GPT)
 
 2. How does attention work in Transformers?* #mediumDS100
+> [!Success]
+>
 > Each token in a sequence computes weighted scores (attention weights) with every other token, determining how much focus to give each position
 >
 > Uses **Queries**, **Keys**, and **Values**: $Attention(\mathbf{Q,K,V}) = softmax(\frac{\mathbf{QK}^T}{\sqrt{d_k}})V$ 
 
 3. What are the common causes of hallucinations in LLMs, and how can they be mitigated (beyond RAG)? #mediumDS100
+> [!Success]
+>
 > The model's training data might be incomplete, or it 'confabulates' to fill gaps. Also, LLM models are trained to predict plausible sequences rather than verify truth
 >
 >To mitigate this one can instruction tune to encourage accurate outputs, through robust prompt engineering that demands sources, external fact-checking, and fine-tuning
@@ -232,14 +274,17 @@ on domain-specific or more factual data sets. Also reducing temperature setting 
 
 #### LLM Fine-Tuning
 1. What data considerations are crucial when fine-tuning an LLM
+
 > [!Success]
-> 
+>
 > - **Data cleanliness and relevance:** Mismatched domain data can degrade performance
 > - **Size and diversity:** Enough examples to generalize, but not so large that it drifts from original capabilities
 > - **Ethical/Legal:** Ensuring that you have the right to use the data and it follows privacy guidelines
 
 #### Business & Product Sense
-1. Explain a project where you had to balance technical accuracy with business requirements. #easyDS100 
+1. Explain a project where you had to balance technical accuracy with business requirements. #easyDS100
+> [!Success]
+>
 > Understanding the business impact of difference accuracy levels. In some cases, a simpler model with faster inference might be better
 > if it meets the business's performance threshold
 >
@@ -252,6 +297,8 @@ on domain-specific or more factual data sets. Also reducing temperature setting 
 > Dashboard of academic vs non-academic drop offs
 
 2. How do you choose the right evaluation metric for a business problem? #mediumDS100 
+> [!Success]
+>
 > Focus on use-case and business value. If false positives are costly, optimize precision, if false negatives are risky, optimize recall for example.
 > 
 > For ranking problems me can use _NDCG_ or _MAP_.
@@ -270,12 +317,16 @@ on domain-specific or more factual data sets. Also reducing temperature setting 
 
 
 3. Walk me through how you'd design a recommendation system for an e-commerce site #mediumDS100 
+> [!Success]
+>
 > - Outline data source ( user behaviour, item metadata)
 > - Consider collaborative filtering + content-based filtering
 > - Decide on offline vs real-time serving. Evaluate via user engagement metrics or CTR (click through rate)
 
 #### Behavioral & Team Fit
 1. Tell me about a challenging data science problem you faced and how you solved it. #easyDS100 
+> [!Success]
+>
 > Influencing a study on Graduate Salary progression that involved multiple teams internally and externally
 >
 > - Current data has a lot of missing data. Whichever way the study was to be done needed to appropriately backdate existing data
