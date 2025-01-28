@@ -7,6 +7,7 @@
 #### Python & Data Wrangling 
 1. When would you use a `groupBy` operation in Pandas? Provide and example #easyDS100 
 > [!Success]
+>
 > We `groupBy` when we need to summarize/aggregate calculations based on categories or groups.
 > For example say we wanted to find the total sales revenue month on month, we'd do
 > ```
@@ -41,7 +42,7 @@
 
 #### SQL
 1. Explain the difference between `INNER JOIN` , `LEFT JOIN`, `RIGHT JOIN` and `FULL JOIN`. #easyDS100  
-> [!Info]
+> [!Success]
 >
 > - **INNER JOIN**: Returns matching rows in both tables 
 > - **LEFT JOIN**:  Return all rows from the left table + matched from right.
@@ -217,7 +218,7 @@ into an LLM to generate answers that are grounded in up-to-date or domain/contex
 > Understanding the business impact of difference accuracy levels. In some cases, a simpler model with faster inference might be better
 > if it meets the business's performance threshold
 >
->> Alteranive
+>> Alternative
 >
 > Building model that could accurately predict students who were at risk of dropping out academically or giving low nps
 > vs Identifying what was the primary cause of students dropping out. It wasn't academic nor because of student experience
